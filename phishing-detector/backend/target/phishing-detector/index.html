@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHISING DETECTOR</title> 
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+
+    <header>
+        <h1>PHISHING DETECTOR</h1>
+        <p>Check a website URL for suspicious activity.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Scan a website</h2>
+
+            <form id="scan-form">
+                <input
+                      type="url"
+                      id="url-input"
+                      name="url"
+                      placeholder="Enter a URL (https://example.com)"
+                      required
+                >
+                <button type="submit">Scan URL</button>
+            </form>
+        </section>
+
+        <section id="result-card" hidden>
+            <h2>Scan Result</h2>
+            <p>
+                Scanned URL:
+                <span id="result-url">  </span>
+            </p>
+
+            <div 
+            id="score-track"
+            role="progressbar"
+            aria-label="Risk score"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+            >
+                <div id="score-bar"></div>
+            </div>
+
+            <p id="result-message" role="status"></p>
+        </section>
+
+        <section id="history-section">
+            <h2>Recent Scans</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Website URL</th>
+                        <th>Risk Score</th>
+                        <th>Status</th>
+                        <th>Scan Time</th>
+                    </tr>
+                </thead>
+
+                <tbody id="history-body"></tbody>
+            </table>
+        </section>
+    </main>
+     <script src="app.js"></script>
+</body>
+</html>
